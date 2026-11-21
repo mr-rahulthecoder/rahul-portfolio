@@ -48,7 +48,7 @@
  
  const experience = [
    {
-     role: 'QA Intern',
+     role: 'STE 1',
      company: 'Nickelfox Technologies Pvt. Ltd.',
      dates: 'Aug 2026 – Present',
      points: [
@@ -122,6 +122,8 @@
      image: '/project-images/IFSTA.png',
      imageAlt: 'IFSTA app screens and Google Play listing overview',
      link: 'https://play.google.com/store/apps/details?id=org.ifsta.unified',
+     linkLabel: 'Google Play',
+     appStoreLink:'https://apps.apple.com/in/app/ifsta-mobile-app/id6756294070',
      linkLabel: 'Google Play',
      layout: 'stacked'
    }
@@ -530,7 +532,7 @@
                          <p>{project.subtitle}</p>
                        </div>
  
-                       <ArrowUpRight size={19} />
+                       
                      </div>
  
                      <div className="tag-row">
@@ -554,40 +556,48 @@
                      </p>
  
                      <div className="project-actions">
-                       {project.category === 'mobile' ? (
-                         <a
-                           className="google-play-badge"
-                           href={project.link}
-                           target="_blank"
-                           rel="noreferrer"
-                           aria-label="Get IFSTA Mobile Application on Google Play"
-                         >
-                           <svg className="google-play-icon" viewBox="0 0 32 36" aria-hidden="true">
-                             <path d="M2 1.8 18.1 18 2 34.2c-.5-.5-.8-1.2-.8-2.1V3.9c0-.9.3-1.6.8-2.1Z" fill="#34A853" />
-                             <path d="m2 1.8 19.4 11.1-3.3 5.1L2 1.8Z" fill="#4285F4" />
-                             <path d="m18.1 18 3.3-5.1 7.1 4.1c1.8 1 1.8 2.8 0 3.8l-7.1 4.1-3.3-6.9Z" fill="#FBBC04" />
-                             <path d="m2 34.2 19.4-11.1-3.3-5.1L2 34.2Z" fill="#EA4335" />
-                           </svg>
-                           <span><small>GET IT ON</small><strong>Google Play</strong></span>
-                         </a>
-                       ) : (
-                         <a
-                           className="project-visit"
-                           href={project.link}
-                           target="_blank"
-                           rel="noreferrer"
-                         >
-                           {project.linkLabel} <ArrowUpRight size={16} />
-                         </a>
-                       )}
- 
-                       <button
-                         className="text-link"
-                         onClick={() => scrollTo('#contact')}
-                       >
-                         Discuss this project <ArrowRight size={15} />
-                       </button>
-                     </div>
+  {project.category === 'mobile' ? (
+    <>
+      <a
+        className="google-play-badge"
+        href={project.link}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <svg className="google-play-icon" viewBox="0 0 32 36" aria-hidden="true">
+          <path d="M2 1.8 18.1 18 2 34.2c-.5-.5-.8-1.2-.8-2.1V3.9c0-.9.3-1.6.8-2.1Z" fill="#34A853" />
+          <path d="m2 1.8 19.4 11.1-3.3 5.1L2 1.8Z" fill="#4285F4" />
+          <path d="m18.1 18 3.3-5.1 7.1 4.1c1.8 1 1.8 2.8 0 3.8l-7.1 4.1-3.3-6.9Z" fill="#FBBC04" />
+          <path d="m2 34.2 19.4-11.1-3.3-5.1L2 34.2Z" fill="#EA4335" />
+        </svg>
+        <span><small>GET IT ON</small><strong>Google Play</strong></span>
+      </a>
+
+      <a
+        className="google-play-badge"
+        href={project.appStoreLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          src="/AppStoreIcon.svg"
+          alt="App Store"
+          className="app-store-icon"
+        />
+        <span><small>Download on the</small><strong>App Store</strong></span>
+      </a>
+    </>
+  ) : (
+    <a
+      className="project-visit"
+      href={project.link}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {project.linkLabel} <ArrowUpRight size={16} />
+    </a>
+  )}
+</div>
                    </div>
                  </motion.article>
                ))}
@@ -775,8 +785,6 @@
          <a className="brand footer-brand" href="#home">
            Rahul <span>Kumar</span><i>.</i>
          </a>
- 
-         <p>QA Engineer · Noida, India</p>
  
          <div className="footer-social">
            <a

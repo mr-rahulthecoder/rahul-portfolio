@@ -2245,3 +2245,8 @@ button:disabled {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
+.app-store-icon {
+  width: 32px;
+  height: 28px;
+  object-fit: contain;
+}
